@@ -9,6 +9,7 @@
     --glass:#ffffff22;
     --text:#e6eef8;
     --muted:#9fb3d9;
+    --para-gap:1.25rem; /* vertical gap between paragraphs */
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
@@ -40,7 +41,7 @@ body{
 }
 .hero .left{flex:1}
 .hero h1{margin:0;font-size:2.25rem;line-height:1.05}
-.hero p{color:var(--muted);margin-top:8px}
+.hero p{color:var(--muted);margin-top:8px;margin-bottom:var(--para-gap)}
 .hero .right{width:300px;height:160px;display:flex;align-items:center;justify-content:center}
 
 /* CTA */
@@ -73,9 +74,96 @@ body{
     box-shadow:0 6px 18px rgba(2,6,23,0.45);
     border:1px solid rgba(255,255,255,0.04);
     color:var(--text);
+    /* fixed, equal height for cards (increased ~20%) */
+    height:360px; /* was 300px */
+    min-height:264px; /* was 220px */
+    position:relative;
+    display:flex;
+    flex-direction:column;
 }
+
+/* wrapper around each grid item so we can place controls below the card */
+.card-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+}
+
+/* header stays at top of the card body while the inner content scrolls */
 .card h3{margin:0 0 8px 0}
-.card p{margin:0;color:var(--muted)}
+
+.card-body{
+    overflow:auto;
+    flex:1 1 auto;
+    /* create breathing room between header and content */
+    padding-top:6px;
+    /* small internal padding; the visible gap is provided by the last-child margin */
+    padding-bottom:20px;
+}
+
+/* always reserve a fixed spacer at the end of the scrollable area so visible
+   text never reaches the controls; this is more reliable than margin alone */
+.card-body::after{
+    content:'';
+    display:block;
+    height:60px; /* visible gap between last text and bottom of card */
+    pointer-events:none;
+}
+
+/* hide native scrollbars inside the card body (we'll provide buttons) */
+.card-body{ scrollbar-width: none; -ms-overflow-style: none }
+.card-body::-webkit-scrollbar{ display: none }
+
+.card-controls{
+    /* controls live outside the card, below it in the grid cell */
+    margin-top:12px;
+    display:flex;
+    justify-content:center; /* center both buttons */
+    align-items:center;
+    gap:20px; /* space between Prev and Next */
+    pointer-events:auto;
+}
+.card-btn{
+    /* much smaller bounding box (~50% smaller) but larger triangle icon */
+    background: linear-gradient(90deg,#ffb86b,#ff8a4d); /* warm orange gradient */
+    color:var(--text);
+    border:none;
+    width:18px; /* reduced from 36px */
+    height:18px; /* reduced from 36px */
+    padding:0;
+    border-radius:6px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 6px 12px rgba(255,138,77,0.18);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    overflow: visible; /* allow the larger triangle to extend outside the box */
+    transition: transform .12s ease, filter .12s ease;
+ }
+
+/* ensure the last item inside the scroll area has breathing room so it never sits under the controls */
+.card-body > *:last-child{ margin-bottom:60px }
+.card-btn[disabled]{opacity:0.45;cursor:default}
+
+.card-btn svg{width:24px;height:24px;display:block;fill:#ffffff;opacity:0.98}
+.card-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.card-btn:focus{outline:2px solid rgba(255,138,77,0.28);outline-offset:2px}
+
+/* make internal scrollbars clearly visible inside cards */
+.card{ -webkit-overflow-scrolling: touch; }
+
+/* Firefox */
+.card{ scrollbar-width: auto; /* auto or thin */ scrollbar-color: rgba(110,231,183,0.9) rgba(255,255,255,0.03); }
+
+/* WebKit (Chrome, Safari, Edge) */
+.card::-webkit-scrollbar{ width:12px; height:12px }
+.card::-webkit-scrollbar-track{ background: rgba(255,255,255,0.02); border-radius:10px }
+.card::-webkit-scrollbar-thumb{ background: linear-gradient(180deg, rgba(110,231,183,0.9), rgba(52,198,255,0.9)); border-radius:10px; border:3px solid transparent; background-clip: padding-box }
+.card::-webkit-scrollbar-thumb:hover{ filter:brightness(1.05) }
+
+/* site-wide paragraph spacing */
+p{margin:0 0 var(--para-gap) 0}
 
 /* Footer small text */
 footer{font-size:0.95rem;color:var(--muted)}

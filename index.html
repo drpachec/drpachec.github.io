@@ -13,10 +13,8 @@
     <section class="hero">
       <div class="left">
         <h1>Dan Pacheco</h1>
-        <p>Professor of Practice and Journalism Innovation Chair. Pioneer in virtual reality for journalism and digital publishing.</p>
-        <div style="margin-top:16px">
-          <a class="btn" href="#awards">Top Awards</a>
-        </div>
+        <p>Professor of Practice and Journalism Innovation Chair. Pioneer in virtual reality for journalism and digital publishing. Award-winning journalist, author and grant recipient. AI innovator for media.</p>
+        
       </div>
       <div class="right">
         <img src="danpacheco.jpg" alt="Dan Pacheco" style="width:100%;height:100%;object-fit:cover;border-radius:12px;max-width:300px;">
@@ -26,28 +24,129 @@
     <div class="card-grid">
       <article class="card">
         <h3>About</h3>
-        <p>Dan Pacheco holds the Peter A. Horvitz Chair of Journalism Innovation at the Newhouse School and is a pioneer in the use of virtual reality for journalism. In 2014 he co-produced The Des Moines Register’s Harvest of Change VR project. Harvest of Change earned an Edward R. Murrow Award in 2015 for innovation in 360-degree video.</p>
+        <p>Dan Pacheco is a Professor of Practice and holds the Peter A. Horvitz Chair of Journalism Innovation at the Newhouse School and is a pioneer in the use of virtual reality for journalism. In 2014 he co-produced The Des Moines Register's Harvest of Change VR project. Harvest of Change earned an Edward R. Murrow Award in 2015 for innovation in 360-degree video.</p>
+
+        <p>Previously, Pacheco spent 20 years in digital publishing at Fortune 500 companies and startups. He started his career as an online producer for Washingtonpost.com and later served as principal product manager at AOL.</p>
       </article>
 
       <article class="card">
         <h3 id="awards">Top Awards</h3>
         <ul>
-          <li>20 Under 40 - Newspaper Association of America</li>
-          <li>Knight News Challenge (2008)</li>
-          <li>Edward R. Murrow Award</li>
+          <li>20 Under 40 - Newspaper Association of America (2006)</li>
+          <li><a href="https://www.poynter.org/reporting-editing/2009/printcasting-a-2008-knight-news-challenge-winner-goes-national/">Knight News Challenge (2008)</a</li>
+          <li><a href="https://www.desmoinesregister.com/story/news/2015/06/24/edward-r-murrow-journalism-award-harvest--change/29219905/?gnt-cfr=1&gca-cat=p&gca-uir=true&gca-epti=z114139e001900v114139b0046xxd004665&gca-ft=153&gca-ds=sophi&sltsgmt=0154_E" target="_blank">Edward R. Murrow Award (2014)</a></li>
+
+
+          <li><a href="https://journalists.org/programs/journalism-360/challenge/2020-winners/" target="_blank">Journalism360 Grant (2020)</a>
+
+          <li><a href="https://newhouse.syracuse.edu/news/nsf-grant-to-engage-refugee-and-immigrant-youth-in-immersive-stem-storytelling/" target="_blank">NSF Grant Recipient (2024)</a></li>
         </ul>
       </article>
 
       <article class="card">
         <h3>Links</h3>
-        <p><a href="https://newhouse.syracuse.edu/people/dan-pacheco" target="_blank" rel="noopener">Newhouse profile</a></p>
-        <p><a href="https://www.washingtonpost.com" target="_blank" rel="noopener">Washington Post</a></p>
+        <ul>
+        <li><a href="https://newhouse.syracuse.edu/people/dan-pacheco" target="_blank" rel="noopener">Newhouse profile</a></li>
+        <li><a href="https://www.emergingmediaplatforms.com" target="_blank" rel="noopener">Experimenting with Emerging Media Platforms (book)</a></li>
+        <li><a href="https://danpacheco.com" target="_blank" rel="noopener">Personal Site</a></li>
+        </ul>
       </article>
+
+      <article class="card">
+        <h3>Contact & Social Media</h3>
+        <p>Email: <a href="mailto:drpachec@syr.edu">drpachec@syr.edu</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/danpacheco" target="_blank">in/danpacheco</a></p>
+
+        <p>Bluesky: <a href="https://bsky.app/profile/danpacheco.com" target="_blank">@danpacheco.com</a></p>
+     </article>
+
     </div>
 
     <footer style="max-width:1100px;margin:40px auto;color:var(--muted)">
-      <p>Previously, Pacheco spent 20 years in digital publishing at Fortune 500 companies and startups. He started his career as an online producer for Washingtonpost.com and later served as principal product manager at AOL.</p>
+      <p></p>
     </footer>
+    <!-- script to add prev/next controls inside cards that overflow -->
+    <script>
+      (function(){
+        function setupCards(){
+          document.querySelectorAll('.card').forEach(function(card){
+            // if card already initialized, skip
+            if(card.dataset.cardInit) return;
+            card.dataset.cardInit = '1';
+
+            // find first heading (h3) to keep as header
+            var header = card.querySelector('h3');
+            if(header){
+              header.classList.add('card-header');
+            }
+
+            // create body wrapper and move other nodes into it
+            var body = document.createElement('div');
+            body.className = 'card-body';
+
+            // move nodes that are not the header into body
+            Array.from(card.childNodes).forEach(function(node){
+              if(node === header) return;
+              // don't move controls (if any)
+              if(node.classList && node.classList.contains('card-controls')) return;
+              body.appendChild(node);
+            });
+
+                // clear card and re-append header then body
+                card.innerHTML = '';
+                if(header) card.appendChild(header);
+                card.appendChild(body);
+
+                // create controls (inside the card, after the body)
+                var controls = document.createElement('div');
+                controls.className = 'card-controls';
+
+                var prev = document.createElement('button');
+                prev.className = 'card-btn'; prev.type='button'; prev.setAttribute('aria-label','Previous');
+                prev.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>';
+
+                var next = document.createElement('button');
+                next.className = 'card-btn'; next.type='button'; next.setAttribute('aria-label','Next');
+                next.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"></path></svg>';
+
+                controls.appendChild(prev); controls.appendChild(next);
+                card.appendChild(controls);
+
+                // scrolling behavior
+                function updateControls(){
+                  // show/hide controls depending on overflow inside the card-body
+                  if(body.scrollHeight > body.clientHeight + 1){
+                    controls.style.display = 'flex';
+                  } else {
+                    controls.style.display = 'none';
+                  }
+
+                  prev.disabled = (body.scrollTop <= 1);
+                  next.disabled = (body.scrollTop + body.clientHeight >= body.scrollHeight - 1);
+                }
+
+                prev.addEventListener('click', function(){
+                  var amount = Math.round(body.clientHeight * 0.9);
+                  body.scrollBy({top: -amount, left:0, behavior:'smooth'});
+                });
+                next.addEventListener('click', function(){
+                  var amount = Math.round(body.clientHeight * 0.9);
+                  body.scrollBy({top: amount, left:0, behavior:'smooth'});
+                });
+
+                // update on scroll & on resize
+                body.addEventListener('scroll', updateControls);
+                window.addEventListener('resize', updateControls);
+
+                // initial update (defer slightly to allow layout)
+                setTimeout(updateControls,50);
+          });
+        }
+
+        if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setupCards);
+        else setupCards();
+      })();
+    </script>
 
   </body>
 </html>
