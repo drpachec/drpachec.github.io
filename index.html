@@ -1,46 +1,53 @@
-<html>
-  
+<!doctype html>
+<html lang="en">
   <head>
-    
-    <title>
-      Professor Dan Pacheco's Portfolio Page
-    </title>
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Professor Dan Pacheco's Portfolio Page</title>
+    <!-- Inter font used by the theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css" />
   </head>
-  
   <body>
 
-      <h1>Dan Pacheco</h1>
-      <h2>Professor of Practice and Journalism Innovation Chair</h2>
-      <a href="#awards">Top Awards</a>
+    <section class="hero">
+      <div class="left">
+        <h1>Dan Pacheco</h1>
+        <p>Professor of Practice and Journalism Innovation Chair. Pioneer in virtual reality for journalism and digital publishing.</p>
+        <div style="margin-top:16px">
+          <a class="btn" href="#awards">Top Awards</a>
+        </div>
+      </div>
+      <div class="right">
+        <img src="danpacheco.jpg" alt="Dan Pacheco" style="width:100%;height:100%;object-fit:cover;border-radius:12px;max-width:300px;">
+      </div>
+    </section>
 
-      <br/>
+    <div class="card-grid">
+      <article class="card">
+        <h3>About</h3>
+        <p>Dan Pacheco holds the Peter A. Horvitz Chair of Journalism Innovation at the Newhouse School and is a pioneer in the use of virtual reality for journalism. In 2014 he co-produced The Des Moines Register’s Harvest of Change VR project. Harvest of Change earned an Edward R. Murrow Award in 2015 for innovation in 360-degree video.</p>
+      </article>
 
-      <img src="danpacheco.jpg" width="300" alt="Dan Pacheco mugshot"/>
+      <article class="card">
+        <h3 id="awards">Top Awards</h3>
+        <ul>
+          <li>20 Under 40 - Newspaper Association of America</li>
+          <li>Knight News Challenge (2008)</li>
+          <li>Edward R. Murrow Award</li>
+        </ul>
+      </article>
 
-      <p>Dan Pacheco holds the Peter A. Horvitz Chair of Journalism Innovation at the 
-        <a href="https://newhouse.syracuse.edu/people/dan-pacheco" target="_blank">Newhouse School</a> and is a pioneer in the use of virtual reality for journalism. In 2014 he started and co-produced The Des Moines Register’s Harvest of Change VR project for the Oculus Rift, the world’s first large-scale use of virtual reality by a commercial news organization. Harvest of Change earned an Edward R. Murrow Award in 2015 for its innovative use of 360-degree video for virtual reality.</p>
+      <article class="card">
+        <h3>Links</h3>
+        <p><a href="https://newhouse.syracuse.edu/people/dan-pacheco" target="_blank" rel="noopener">Newhouse profile</a></p>
+        <p><a href="https://www.washingtonpost.com" target="_blank" rel="noopener">Washington Post</a></p>
+      </article>
+    </div>
 
-      <img src="barry.jpg" width="300" alt="Barry the dog"/>
+    <footer style="max-width:1100px;margin:40px auto;color:var(--muted)">
+      <p>Previously, Pacheco spent 20 years in digital publishing at Fortune 500 companies and startups. He started his career as an online producer for Washingtonpost.com and later served as principal product manager at AOL.</p>
+    </footer>
 
-  <p>Previously, Pacheco spent 20 years in the trenches of digital publishing everywhere from Fortune 500 companies to startups. He started his career as an online producer for Washingtonpost.com, where he produced Interact, one of the first online news communities. Subsequently, as a principal product manager at America Online, he oversaw some of the internet’s first truly global community products. In 2005, after pioneering the first implementation of a social networking platform at a U.S. newspaper, he received an NAA “20 Under 40” award. And in 2007, he received a Knight News Challenge grant to build a democratized publishing service that evolved into an eBook platform.</p>
-
-
-
-    <h2 id="awards">Top Awards Earned</h2>
-    
-    <ul>
-      <li>20 Under 40 - Newspaper Association of America</li>
-      <li>Knight News Challenged (2008)</li>
-      <li>Edward R. Murrow Award</li>
-    </ul>
-
-    <ol>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ol>
-    
   </body>
-  
 </html>
