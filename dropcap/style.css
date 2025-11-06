@@ -1,0 +1,61 @@
+ :root {
+    --measure: 66ch;
+    --body: ui-serif, Georgia, "Times New Roman", Times, serif;
+  }
+
+  body {
+    margin: 0;
+    font: 17px/1.6 var(--body);
+    color: #222;
+    background: #fff;
+  }
+
+  .article {
+    max-width: var(--measure);
+    padding: 24px 16px 64px;
+    margin: 0 auto;
+  }
+
+  .hed {
+    font: 800 2.25rem/1.15 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    margin: 0 0 6px;
+  }
+
+  .dek {
+    font: 400 1.125rem/1.35 var(--body);
+    color: #555;
+    margin: 0 0 16px;
+  }
+
+  .byline {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .article p { margin: 0 0 1em; }
+
+  .lede { text-wrap: pretty; }
+
+  @supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
+    .lede::first-letter {
+      initial-letter: 2;
+      -webkit-initial-letter: 2;
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+  }
+
+  @supports not (initial-letter: 2) {
+    .lede::first-letter {
+      float: left;
+      font-size: 3.5rem;
+      line-height: 0.8;
+      font-weight: 700;
+      margin: 0.1rem 0.5rem 0 0;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .lede::first-letter { all: unset; }
+  }
