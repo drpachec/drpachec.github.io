@@ -32,3 +32,13 @@ p {
     display: block;
     margin: 0;
 }
+
+
+.josefin-sans-700 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
