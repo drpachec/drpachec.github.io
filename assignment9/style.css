@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+
+}
+
+h1 {
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px
+
+}
+
+p {
+
+    font-familiy: 'Georgia', serif;
+    line-height: 1.6;
+    color: #666;
+}
+
+.navbar-custom {
+background: linear-gradient(90deg, #003973, #E5E5BE);
+border-bottom: 3px solid #1a1a1a;
+}
+
+.navbar-custom .navbar-brand {
+font-weight: 700;
+font-size: 1.5rem;
+color: #ffffff;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.navbar-custom .nav-link {
+color: #f8f9fa !important;
+margin-right: 0.8rem;
+font-weight: 500;
+transition: 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+color: #ffe08a !important;
+transform: translateY(-2px);
+}
+
+.navbar-custom .nav-link.active {
+color: #ffe08a !important;
+font-weight: 700;
+}
+
+.navbar-toggler {
+border-color: rgba(255,255,255,0.6);
+}
+
+.navbar-toggler-icon {
+filter: brightness(0) invert(1);
+}
+
+/ <uniquifier>: Use a unique and descriptive class name
+
+.nabla-pacheco {
+  font-family: "Nabla", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "EDPT" 100,
+    "EHLT" 12;
+}
+
+.icon-white {
+  fill: white;
+}
