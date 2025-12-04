@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 30px;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 19px;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    padding: 8px 16px !important;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(0,0,0,0.1);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+}
+
+.navbar-brand svg {
+    fill: white;
+}
+
+.outfit-pacheco {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+[class*="col-"] { 
+    border: 0px solid #dee2e6; 
+    padding: 15px; 
+    min-height: 50px; 
+}
+
+.main-container {
+    padding-left: 10px !important;
+    padding-right: 0;
+}
+
+.grayedout {
+    background-color: rgb(219, 214, 214);
+}
+
+.sidebartext {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.cardcaption {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12px;
+   
+}
+
+.cardcaptiontitle {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 22px;
+    font-style: bold;
+
+}
