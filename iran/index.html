@@ -1,1 +1,191 @@
-Testing
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Syracuse Reports</title>
+  </head>
+
+  <body>
+    <!-- Top utility bar -->
+    <div class="topbar">
+      <div
+        class="container d-flex justify-content-between align-items-center"
+        style="max-width: var(--max-w)"
+      >
+        <span id="topbar-date"></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="publication-name" href="#">Syracuse Reports<span>.</span></a>
+        <div class="masthead-meta">
+          Syracuse University<br />S.I. Newhouse School
+        </div>
+      </div>
+    </header>
+
+    <!-- Section nav -->
+    <nav class="section-nav" aria-label="Site sections">
+      <div class="section-nav-inner">
+        <a href="#" class="active">Home</a>
+        <a href="#">Section 1</a>
+        <a href="#">Section 2</a>
+        <a href="#">Section 3</a>
+      </div>
+    </nav>
+
+    <!-- Article -->
+    <main class="article-wrapper">
+      <div class="article-section-label">JNL 221 Reports</div>
+
+      <h1 class="article-headline">U.S. Troop Presence in Iran Over Time</h1>
+
+      <p class="article-deck">
+        A one or two sentence summary of your story that draws readers in and
+        explains why this matters.
+      </p>
+
+      <div class="article-byline">
+        <span>By <span class="byline-author">Dan Pacheco</span></span>
+        <span id="byline-date"></span>
+      </div>
+
+      <div class="article-body">
+        
+        <p>
+          Your intro text here. This is the opening paragraph of your story.
+          This is the opening paragraph of your story. This is the opening
+          paragraph of your story. This is the opening paragraph of your story.
+          This is the opening paragraph of your story. This is the opening
+          paragraph of your story. This is the opening paragraph of your story.
+        </p>
+
+        <p>
+          Your intro text here. This is the opening paragraph of your story.
+          This is the opening paragraph of your story. This is the opening
+          paragraph of your story. This is the opening paragraph of your story.
+          This is the opening paragraph of your story. This is the opening
+          paragraph of your story. This is the opening paragraph of your story.
+        </p>
+
+        <p>
+          Your intro text here. This is the opening paragraph of your story.
+          This is the opening paragraph of your story. This is the opening
+          paragraph of your story. This is the opening paragraph of your story.
+          This is the opening paragraph of your story. This is the opening
+          paragraph of your story. This is the opening paragraph of your story.
+        </p>
+
+        <hr class="section-rule" />
+
+        <!-- Datawrapper chart -->
+        <div class="embed-block">
+          <div class="embed-label">Chart</div>
+          <div class="embed-placeholder">
+            <iframe
+              title="Iran"
+              aria-label="Locator map"
+              id="datawrapper-chart-ZtGFf"
+              src="https://datawrapper.dwcdn.net/ZtGFf/1/"
+              scrolling="no"
+              frameborder="0"
+              style="width: 0; min-width: 100% !important; border: none"
+              height="519"
+              data-external="1"
+            ></iframe>
+            <script type="text/javascript">
+              window.addEventListener("message", function (a) {
+                if (void 0 !== a.data["datawrapper-height"]) {
+                  var e = document.querySelectorAll("iframe");
+                  for (var t in a.data["datawrapper-height"])
+                    for (var r, i = 0; (r = e[i]); i++)
+                      if (r.contentWindow === a.source) {
+                        var d = a.data["datawrapper-height"][t] + "px";
+                        r.style.height = d;
+                      }
+                }
+              });
+            </script>
+          </div>
+        </div>
+
+        <hr class="section-rule" />
+
+        <!-- Google Map -->
+        <div class="embed-block">
+          <div class="embed-label">Interactive Map</div>
+          <div class="embed-placeholder">
+            <iframe
+              title="U.S. Troops in Iran Since 1950"
+              aria-label="Line chart"
+              id="datawrapper-chart-AJcn4"
+              src="https://datawrapper.dwcdn.net/AJcn4/1/"
+              scrolling="no"
+              frameborder="0"
+              style="width: 0; min-width: 100% !important; border: none"
+              height="407"
+              data-external="1"
+            ></iframe>
+            <script type="text/javascript">
+              window.addEventListener("message", function (a) {
+                if (void 0 !== a.data["datawrapper-height"]) {
+                  var e = document.querySelectorAll("iframe");
+                  for (var t in a.data["datawrapper-height"])
+                    for (var r, i = 0; (r = e[i]); i++)
+                      if (r.contentWindow === a.source) {
+                        var d = a.data["datawrapper-height"][t] + "px";
+                        r.style.height = d;
+                      }
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const now = new Date();
+      const opts = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      const dateStr = now.toLocaleDateString("en-US", opts);
+      document.getElementById("topbar-date").textContent = dateStr;
+      document.getElementById("byline-date").textContent = dateStr;
+      document.getElementById("footer-year").textContent = now.getFullYear();
+    </script>
+  </body>
+</html>
