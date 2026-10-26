@@ -1,0 +1,27 @@
+{
+  "id": "main",
+  "name": "Flat Web Page",
+  "framework": "html",
+  "files": [
+    {
+      "id": "index.html",
+      "name": "index.html",
+      "type": "html"
+    },
+    {
+      "id": "style.css",
+      "name": "style.css",
+      "type": "css"
+    },
+    {
+      "id": "script.js",
+      "name": "script.js",
+      "type": "javascript"
+    },
+    {
+      "id": "config.json",
+      "name": "config.json",
+      "type": "json"
+    }
+  ]
+}

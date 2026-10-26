@@ -1,0 +1,169 @@
+{
+  "name": "hotspot-project-1793047159288",
+  "created": "2026-10-26T20:40:25.158Z",
+  "scenes": {
+    "scene1": {
+      "name": "Scene 1",
+      "type": "image",
+      "image": "/common-assets/360-images/n3foodcom_lobby_1792705522282.jpg",
+      "videoSrc": null,
+      "videoVolume": 0.5,
+      "hotspots": [
+        {
+          "id": 2,
+          "type": "navigation",
+          "position": "-7.32 1.63 -1.63",
+          "text": "",
+          "scene": "scene1",
+          "navigationTarget": "scene_1793046981769",
+          "audio": null,
+          "audioLoop": true
+        },
+        {
+          "id": 3,
+          "type": "image",
+          "position": "-6.98 1.98 2.73",
+          "text": "",
+          "scene": "scene1",
+          "navigationTarget": "scene_1793046981769",
+          "audio": null,
+          "audioLoop": true,
+          "mediaKind": "photo",
+          "videoLoop": true,
+          "videoMuted": false,
+          "imageScale": 5,
+          "imageAspectRatio": 0.8302911449690753,
+          "image": "/common-assets/images/puffin_fish_1783176798024.jpg"
+        }
+      ],
+      "startingPoint": {
+        "rotation": {
+          "x": -2.2918311805232916,
+          "y": 85.94366926962351,
+          "z": 0
+        }
+      },
+      "globalSound": null,
+      "ground": null
+    },
+    "scene_1793046981769": {
+      "name": "2",
+      "type": "image",
+      "image": "/common-assets/360-images/n1lobby2_1792705506715.jpg",
+      "videoSrc": null,
+      "videoVolume": 0.5,
+      "hotspots": [
+        {
+          "id": 1,
+          "type": "navigation",
+          "position": "-7.23 1.91 -1.98",
+          "text": "",
+          "scene": "scene_1793046981769",
+          "navigationTarget": "scene1",
+          "audio": null,
+          "audioLoop": true
+        }
+      ],
+      "startingPoint": {
+        "rotation": {
+          "x": -6.531718864491386,
+          "y": 68.18197762056799,
+          "z": 0
+        }
+      },
+      "globalSound": null,
+      "ground": null
+    }
+  },
+  "currentScene": "scene1",
+  "startScene": "scene1",
+  "customStyles": {
+    "hotspot": {
+      "infoButton": {
+        "backgroundColor": "#4A90E2",
+        "textColor": "#FFFFFF",
+        "fontSize": 12,
+        "opacity": 0.9,
+        "size": 0.4
+      },
+      "popup": {
+        "backgroundColor": "#333333",
+        "textColor": "#FFFFFF",
+        "borderColor": "#555555",
+        "borderWidth": 0,
+        "borderRadius": 0,
+        "opacity": 0.95,
+        "fontSize": 1,
+        "padding": 0.2
+      },
+      "closeButton": {
+        "size": 0.4,
+        "opacity": 1
+      }
+    },
+    "audio": {
+      "buttonColor": "#FFFFFF",
+      "buttonOpacity": 1
+    },
+    "buttonImages": {
+      "play": "images/play.png",
+      "pause": "images/pause.png"
+    },
+    "navigation": {
+      "ringColor": "#005500",
+      "ringOuterRadius": 0.6,
+      "ringThickness": 0.02,
+      "weblinkRingColor": "#001f5b",
+      "labelColor": "#FFFFFF",
+      "labelBackgroundColor": "#000000",
+      "labelOpacity": 0.8
+    },
+    "image": {
+      "borderColor": "#FFFFFF",
+      "borderWidth": 0.02,
+      "borderRadius": 0.05,
+      "opacity": 1
+    },
+    "gaze": {
+      "duration": 2
+    }
+  },
+  "version": "1.0",
+  "flatPages": {
+    "version": "2.5",
+    "activePageId": "main",
+    "pages": {
+      "main": {
+        "id": "main",
+        "name": "Flat Web Page",
+        "framework": "html",
+        "files": [
+          {
+            "id": "index.html",
+            "name": "index.html",
+            "type": "html",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>My Flat Web Page</title>\n  <link rel=\"stylesheet\" href=\"style.css\" />\n</head>\n<body>\n  <main>\n    <h1>My Flat Web Page</h1>\n    <p>Edit the HTML, CSS, and JavaScript tabs and watch the preview update live.</p>\n    <button id=\"hello\">Click me</button>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "id": "style.css",
+            "name": "style.css",
+            "type": "css",
+            "content": "body {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n  background: #f8fafc;\n  color: #1f2933;\n  margin: 0;\n}\nmain {\n  max-width: 640px;\n  margin: 0 auto;\n  padding: 3rem 1.5rem;\n  text-align: center;\n}\nh1 { color: #2563eb; }\nbutton {\n  margin-top: 1rem;\n  padding: 0.6rem 1.2rem;\n  font-size: 1rem;\n  border: none;\n  border-radius: 6px;\n  background: #2563eb;\n  color: #fff;\n  cursor: pointer;\n}\nbutton:hover { background: #1d4ed8; }"
+          },
+          {
+            "id": "script.js",
+            "name": "script.js",
+            "type": "javascript",
+            "content": "document.getElementById('hello')?.addEventListener('click', function () {\n  alert('Hello from your flat web page!');\n});"
+          },
+          {
+            "id": "config.json",
+            "name": "config.json",
+            "type": "json",
+            "content": "{}"
+          }
+        ]
+      }
+    }
+  }
+}
