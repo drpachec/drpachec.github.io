@@ -1,0 +1,430 @@
+/* =====================================================================
+   STYLE.CSS: YOUR SITE'S STYLESHEET
+   Every page links to this one file, so a change here changes the whole site.
+
+   HOW CSS WORKS, IN ONE MINUTE
+   A rule looks like this:
+
+       h1 {
+           font-size: 42px;
+       }
+
+   - The part before the { } says WHAT to style. That's called a selector.
+       h1          styles every <h1> tag
+       .kicker     (starts with a dot) styles anything with class="kicker"
+       #gallery-counter  (starts with #) styles the one thing with id="gallery-counter"
+       nav a       styles every <a> link that's INSIDE a <nav>
+   - Inside the { } are settings, written as  property: value;
+     Each one ends with a semicolon. Change the VALUE to change the look.
+
+   Notes like this one, between slash-star and star-slash, are comments.
+   The browser ignores them.
+
+   BOOTSTRAP AND THIS FILE
+   Bootstrap's own stylesheet loads BEFORE this one (see the <head> of each
+   page). When this file and Bootstrap set the same thing, this file wins.
+   Sections below that change Bootstrap parts are labeled "(Bootstrap)".
+   Bootstrap docs: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+   ===================================================================== */
+
+
+/* =============================================
+   COLORS AND FONTS: START HERE
+   These are "variables": a name (starting with two dashes) that stores a
+   value. Everywhere else in this file says var(--ink) instead of repeating
+   the color, so changing a value HERE changes it everywhere at once.
+
+   Colors are written as hex codes: # followed by six characters.
+   Find codes with any "color picker" search, or https://htmlcolorcodes.com
+   ============================================= */
+
+:root {
+    --ink: #121212;          /* main text color (almost black) */
+    --ink-light: #5a5a5a;    /* gray for bylines, captions and the tagline */
+    --rule: #dcdcdc;         /* light gray for thin divider lines */
+    --accent: #b3261e;       /* dark red for the kicker and the pull-quote bar. Try your own color! */
+    --link: #326891;         /* blue for links in your story text */
+
+    /* FONTS: the first name in each list is the font you want. The names after the
+       commas are backups if it doesn't load. If you change the first font, also load
+       it from Google Fonts in the <head> of every page. */
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;      /* headlines and story text */
+    --sans: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;     /* labels, nav, captions */
+}
+
+
+/* =============================================
+   PAGE BASICS
+   ============================================= */
+
+/* The whole page */
+body {
+    margin: 0;
+    background-color: #ffffff;   /* page background: #ffffff is white */
+    color: var(--ink);
+    font-family: var(--serif);
+}
+
+/* The box that holds everything on the page (class="articlebox" in the HTML) */
+.articlebox {
+    max-width: 960px;            /* how wide the page can get. Bigger number = wider page */
+    margin: 0 auto;              /* "auto" on the sides centers the page */
+    padding: 0 16px 40px;        /* space inside the box: top, sides, bottom */
+    background-color: #ffffff;
+}
+
+/* All links */
+a {
+    color: var(--link);
+}
+
+/* All images: never wider than the space they're in, and never stretched out of shape */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =============================================
+   MASTHEAD AND NAVIGATION
+   The site name, tagline and menu at the top of every page.
+   ============================================= */
+
+/* The area that holds the site name and tagline */
+.masthead {
+    text-align: center;          /* try "left" to line it up on the left */
+    padding: 28px 0 14px;        /* space above and below */
+}
+
+/* The site name ("Site Name" in the HTML) */
+.site-name {
+    font-family: var(--serif);
+    font-weight: 700;            /* 400 = normal, 700 = bold */
+    font-size: 44px;             /* size of the site name */
+    letter-spacing: -0.01em;     /* tightens the letters slightly */
+    margin: 0;
+    color: var(--ink);
+    text-decoration: none;       /* removes the underline links normally have */
+}
+
+/* The small line under the site name */
+.tagline {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-light);
+    margin: 4px 0 0;
+}
+
+/* The menu bar */
+nav {
+    display: flex;               /* lines the links up in a row */
+    flex-wrap: wrap;             /* lets them wrap onto two lines on narrow screens */
+    justify-content: center;     /* centers the links. Try "flex-start" for left */
+    gap: 4px 28px;               /* space between links: up/down, then side to side */
+    border-top: 1px solid var(--ink);     /* the dark line above the menu */
+    border-bottom: 1px solid var(--rule); /* the light line below it */
+    padding: 10px 0;
+    margin-bottom: 32px;         /* space between the menu and the story */
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;   /* ALL CAPS. Delete this line for normal capitals */
+    letter-spacing: 0.08em;      /* spreads the letters apart a little */
+}
+
+/* Each link in the menu */
+nav a {
+    color: var(--ink);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;  /* an invisible underline, ready to show on hover */
+}
+
+/* ":hover" means "while the mouse is over it". A light underline appears. */
+nav a:hover {
+    border-bottom-color: var(--rule);
+}
+
+/* The link for the page you're on (class="active" in the HTML) gets a dark underline */
+nav a.active {
+    border-bottom-color: var(--ink);
+}
+
+
+/* =============================================
+   HEADLINES AND ARTICLE TEXT
+   ============================================= */
+
+/* The small colored label above a headline (class="kicker") */
+.kicker {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);        /* uses the accent color from the top of this file */
+    margin-bottom: 8px;
+}
+
+/* The main headline. The comma means "these settings apply to BOTH h1 and .headline". */
+h1,
+.headline {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 42px;             /* headline size */
+    line-height: 1.12;           /* space between lines of a long headline */
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+}
+
+/* Second-level headings (<h2>) */
+h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+/* The one-sentence summary under a headline (class="dek") */
+.dek {
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.4;
+    color: var(--ink-light);
+    margin-bottom: 14px;
+}
+
+/* The "By YOUR NAME · Date" line (class="byline") */
+.byline {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--rule);  /* the thin line under the byline */
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+/* Your name inside the byline (the part wrapped in <strong>) */
+.byline strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* Every paragraph of story text */
+p {
+    font-family: var(--serif);
+    font-size: 19px;             /* story text size */
+    line-height: 1.6;            /* space between lines. 1.6 = 1.6 times the text size */
+    margin-bottom: 1.2em;        /* space after each paragraph */
+}
+
+/* Pull quote (<blockquote>) */
+blockquote {
+    font-family: var(--serif);
+    font-style: italic;          /* change to "normal" for upright letters */
+    font-size: 28px;
+    line-height: 1.35;
+    border-left: 4px solid var(--accent);  /* the colored bar on the left: thickness, style, color */
+    padding-left: 20px;          /* space between the bar and the words */
+    margin: 12px 0 28px;
+}
+
+/* Small all-caps section heading with a heavy line above it (class="section-label").
+   Used for "In Pictures", "Photo Gallery" and "Frequently Asked Questions". */
+.section-label {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-top: 2px solid var(--ink);   /* the line above the label */
+    padding-top: 10px;
+    margin: 36px 0 16px;         /* space above, sides, below */
+}
+
+
+/* =============================================
+   PHOTOS AND CAPTIONS
+   ============================================= */
+
+/* A <figure> holds a photo and its caption together */
+figure {
+    margin: 0 0 24px;            /* space below each photo */
+}
+
+/* The caption under a photo (<figcaption>) */
+figcaption {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--ink-light);
+    margin-top: 6px;             /* space between the photo and its caption */
+}
+
+/* Photo credit links in captions stay gray instead of turning blue.
+   "inherit" means "use the same color as the text around it". */
+figcaption a,
+.gallery-frame p a {
+    color: inherit;
+}
+
+
+/* =============================================
+   PHOTO GALLERY (not Bootstrap)
+   The Previous/Next gallery on the home page. Its photos are listed in
+   the script at the bottom of index.html.
+   ============================================= */
+
+/* The gallery photo */
+.gallery-frame img {
+    width: 100%;
+    max-height: 500px;           /* the tallest a gallery photo can be */
+    object-fit: contain;         /* shows the whole photo without cropping */
+    background-color: #f3f3f3;   /* light gray behind photos that don't fill the space */
+}
+
+/* The gallery caption */
+.gallery-frame p {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-light);
+    margin: 6px 0 0;
+}
+
+/* The row holding the buttons and the "1 of 3" counter */
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* pushes the buttons to the far left and right */
+    margin-top: 12px;
+}
+
+/* The Previous and Next buttons */
+.gallery-controls button {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background-color: #ffffff;   /* button fill */
+    color: var(--ink);           /* button text */
+    border: 1px solid var(--ink);
+    padding: 8px 14px;           /* button size: up/down, then side to side */
+    cursor: pointer;             /* shows the pointing-hand cursor */
+    transition: background-color 0.15s ease, color 0.15s ease;  /* makes the hover change fade in smoothly */
+}
+
+/* Buttons while the mouse is over them: the colors flip */
+.gallery-controls button:hover {
+    background-color: var(--ink);
+    color: #ffffff;
+}
+
+/* The "1 of 3" counter between the buttons */
+#gallery-counter {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-light);
+}
+
+
+/* =============================================
+   PHOTO SLIDESHOW (Bootstrap)
+   These rules adjust Bootstrap's carousel. Bootstrap handles the sliding,
+   arrows and dots. This file only changes how the captions look.
+   Docs: https://getbootstrap.com/docs/5.3/components/carousel/
+   ============================================= */
+
+.carousel {
+    margin-bottom: 6px;
+}
+
+/* The caption on each slide (Bootstrap's "carousel-caption").
+   It's stretched across the bottom of the photo with a dark fade behind it,
+   so white text stays readable on light photos.
+   Docs: https://getbootstrap.com/docs/5.3/components/carousel/#captions */
+.carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 48px 16px 40px;     /* the bottom padding leaves room for the dots */
+    /* The fade: 75% black at the bottom, see-through at the top.
+       The last number in rgba() is how see-through it is (0 = clear, 1 = solid). */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.carousel-caption p {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Links in slide captions stay white */
+.carousel-caption a {
+    color: #ffffff;
+}
+
+
+/* =============================================
+   FAQ ACCORDION (Bootstrap)
+   Bootstrap's accordion has its own color and border settings, stored in
+   variables that start with --bs-. Setting them here replaces Bootstrap's
+   defaults. Change the values after the colons.
+   Full list of settings: https://getbootstrap.com/docs/5.3/components/accordion/#variables
+   ============================================= */
+
+.accordion {
+    --bs-accordion-border-radius: 0;                 /* square corners. Try 8px for rounded ones */
+    --bs-accordion-inner-border-radius: 0;
+    --bs-accordion-border-color: var(--rule);        /* lines between questions */
+    --bs-accordion-active-bg: #f6f6f6;               /* background of the open question */
+    --bs-accordion-active-color: var(--ink);         /* text color of the open question */
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 2px var(--rule);  /* outline when selected with the keyboard */
+}
+
+/* The questions */
+.accordion-button {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* The answers */
+.accordion-body {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+footer {
+    border-top: 1px solid var(--ink);   /* the line above the footer */
+    margin-top: 48px;
+    padding-top: 14px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-light);
+}
+
+
+/* =============================================
+   SMALLER SCREENS (phones)
+   Everything inside this @media block applies ONLY when the screen is
+   576px wide or less. That's the same size where Bootstrap stacks the
+   columns. It shrinks the big text so it fits on a phone.
+   Bootstrap screen sizes: https://getbootstrap.com/docs/5.3/layout/breakpoints/
+   ============================================= */
+
+@media (max-width: 576px) {
+    .site-name { font-size: 32px; }
+    h1, .headline { font-size: 32px; }
+    .dek { font-size: 19px; }
+    p { font-size: 18px; }
+    blockquote { font-size: 23px; }
+}

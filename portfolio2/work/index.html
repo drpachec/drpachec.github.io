@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+    =====================================================================
+    WORK PAGE
+    This page lives in the "work" folder, so every link to a file in the
+    main folder starts with "../", which means "go up one folder".
+      ../style.css       = style.css in the main folder
+      ../images/...      = the images folder in the main folder
+      ../index.html      = the home page
+
+    The layout shows several Bootstrap column patterns you can reuse:
+    two equal columns, full width, and three equal columns.
+    Bootstrap docs: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+    =====================================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- Leave these two lines as they are: they handle special characters and phone screens. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CHANGE THIS: the title shown in the browser tab and in search results -->
+    <title>YOUR NAME's Latest Work</title>
+
+    <!-- CHANGE THESE: the summary search engines show, and your name -->
+    <meta name="description" content="A one-sentence description of this page goes here.">
+    <meta name="author" content="YOUR NAME">
+
+    <!-- Google Fonts. Keep this the same on every page so the whole site matches. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+    <!-- STYLESHEETS: the ORDER matters.
+         1. BOOTSTRAP loads first (don't edit this line).
+         2. YOUR style.css loads second, so your styles win when the two disagree.
+            "../" goes up one folder to reach style.css in the main folder. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- "articlebox" (from style.css) sets the page width and centers it -->
+<div class="articlebox">
+
+    <!-- BOOTSTRAP "container": holds the rows and columns.
+         This page mostly uses plain "col-sm" with no number. Bootstrap then splits the row EVENLY:
+         two col-sm columns are half each, three are a third each. Add or remove one and the rest adjust.
+         Docs: https://getbootstrap.com/docs/5.3/layout/grid/#equal-width -->
+    <div class="container">
+
+        <!-- ROW 1: MASTHEAD AND NAV BAR
+             Keep this the same on every page. The only difference: class="active" goes on
+             THIS page's link (Work), so it gets the underline. -->
+        <div class="row">
+            <div class="col-12">
+                <header>
+                    <div class="masthead">
+                        <a class="site-name" href="../index.html">Site Name</a>
+                        <p class="tagline">A short tagline about your site goes here</p>
+                    </div>
+                    <nav>
+                        <a href="../index.html">Home</a>
+                        <a href="../about/index.html">About</a>
+                        <a class="active" aria-current="page" href="index.html">Work</a>
+                    </nav>
+                </header>
+            </div>
+        </div>
+
+        <!-- ROW 2: KICKER, HEADLINE AND DEK (the summary line). CHANGE the text. -->
+        <div class="row">
+            <div class="col-lg-10">
+                <p class="kicker">Portfolio</p>
+                <h1 class="headline">Latest Work</h1>
+                <p class="dek">This is a subhead. One or two sentences about the kind of stories you report.</p>
+            </div>
+        </div>
+
+        <!-- ROW 3: TWO EQUAL COLUMNS (text left, photo right)
+             For each photo, CHANGE the src (file), alt (description for screen readers) and figcaption (caption and credit).
+             "img-fluid" is BOOTSTRAP: it keeps the photo inside its column.
+             Docs: https://getbootstrap.com/docs/5.3/content/images/ -->
+        <div class="row">
+            <div class="col-sm">
+                <p>Story text here. Story text here. Story text here. Story text here. Story text here. Story text here.</p>
+            </div>
+            <div class="col-sm">
+                <figure>
+                    <img class="img-fluid" src="../images/verdun-crypt.jpg" alt="Stone columns and arches in the crypt of Verdun Cathedral, looking toward the altar">
+                    <figcaption>The 12th-century Romanesque crypt of Verdun Cathedral, France. Photo: <a href="https://commons.wikimedia.org/wiki/File:Verdun_%E2%80%93_Cath%C3%A9drale_Notre-Dame_%E2%80%93_Crypte_2025_08_16.jpg">Andreas F. Borchert</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- ROW 4: FULL-WIDTH TEXT (one column takes the whole row) -->
+        <div class="row">
+            <div class="col-sm">
+                <p>Text area full width. Text area full width. Text area full width. Text area full width. Text area full width.</p>
+            </div>
+        </div>
+
+        <!-- ROW 5: FULL-WIDTH PHOTO -->
+        <div class="row">
+            <div class="col-sm">
+                <figure>
+                    <img class="img-fluid" src="../images/norderney-dunes.jpg" alt="A wooden signpost in grassy sand dunes on the island of Norderney, Germany">
+                    <figcaption>Dunes and a signpost in the Lower Saxon Wadden Sea National Park, Norderney, Germany. Photo: <a href="https://commons.wikimedia.org/wiki/File:Norderney,_D%C3%BCnenlandschaft,_Wegweiser_--_2025_--_9437.jpg">Dietmar Rabich</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- ROW 6: THREE EQUAL COLUMNS (text, photo, text) -->
+        <div class="row">
+            <div class="col-sm">
+                <p>Story text here. Story text here. Story text here. Story text here. Story text here. Story text here.</p>
+            </div>
+            <div class="col-sm">
+                <figure>
+                    <img class="img-fluid" src="../images/tatra-mountains.jpg" alt="Rocky mountain peaks and a green valley seen from Kościelec in Poland's Tatra Mountains">
+                    <figcaption>The view toward Świnica from Kościelec, Tatra National Park, Poland. Photo: <a href="https://commons.wikimedia.org/wiki/File:Ko%C5%9Bcielec_view_2.jpg">kallerna</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+                </figure>
+            </div>
+            <div class="col-sm">
+                <p>Story text here. Story text here. Story text here. Story text here. Story text here. Story text here.</p>
+            </div>
+        </div>
+
+        <!-- ROW 7: FOOTER. CHANGE the year and your name. -->
+        <div class="row">
+            <div class="col-12">
+                <footer>&copy; Year YOUR NAME. All rights reserved.</footer>
+            </div>
+        </div>
+
+    </div><!-- end container -->
+
+</div><!-- end articlebox -->
+
+<!-- BOOTSTRAP JAVASCRIPT. This page doesn't use a carousel or accordion yet, but keeping this line
+     means they'll work if you copy one in from the home page. Don't edit it. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

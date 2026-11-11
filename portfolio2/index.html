@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--
+    =====================================================================
+    HOW TO READ THIS FILE
+    Anything between these comment markers is a note for you. Browsers
+    ignore comments, so they never show up on the page.
+
+    This is the HOME page. It uses two kinds of styling:
+      1. Bootstrap: a free, ready-made toolkit that handles the page
+         layout (rows and columns), the photo slideshow and the FAQ.
+         Its class names look like "row", "col-sm-5" or "carousel".
+         Docs: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+      2. style.css: YOUR stylesheet, in the main folder. It controls the
+         fonts, colors and spacing. Class names like "kicker", "headline"
+         and "dek" are defined there.
+
+    Tip: text between tags is safe to change, for example the words in
+    <h1>Headline</h1>. Be more careful changing the parts inside < >.
+    =====================================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- The <head> holds information ABOUT the page. Nothing in it appears in the page itself. -->
+
+    <!-- These two lines make special characters display correctly and make the page fit phone screens. Leave them as they are. -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CHANGE THIS: the title shown in the browser tab and in search results -->
+
+    <title>Some Title Here</title>
+
+    <!-- Basic SEO (search engine optimization)
+         CHANGE THESE: "description" is the summary search engines show under your title.
+         "author" is your name. "keywords" are words people might search for, separated by commas. -->
+
+    <meta name="description" content="A one-sentence description of this page goes here.">
+    <meta name="author" content="YOUR NAME">
+    <meta name="keywords" content="keyword one, keyword two, keyword three">
+
+    <!-- Open Graph: controls the preview card when someone shares this page on Facebook, LinkedIn, Slack, etc.
+         CHANGE THESE: the title, description, image and the web address (URL) where your page will live. -->
+
+    <meta property="og:title" content="Some Title Here">
+    <meta property="og:description" content="A one-sentence description of this page goes here.">
+    <meta property="og:image" content="images/wombat.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yourdomain.com/index.html">
+
+    <!-- Twitter/X Card: the same idea as Open Graph, for posts on X. Keep these matching the lines above. -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Some Title Here">
+    <meta name="twitter:description" content="A one-sentence description of this page goes here.">
+    <meta name="twitter:image" content="images/wombat.jpg">
+
+    <!-- Google Fonts: loads Source Serif 4 (headlines and story text) and Libre Franklin (labels and navigation).
+         To use different fonts, pick them at https://fonts.google.com, replace the long link below with the
+         one Google gives you, then change the font names at the top of style.css. -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+    <!-- STYLESHEETS: the ORDER matters.
+         1. BOOTSTRAP loads first. This one line brings in all of Bootstrap's styles from the internet.
+            Don't edit it. Docs: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+         2. YOUR style.css loads second. When two rules disagree, the one loaded LAST wins,
+            so this order lets your styles override Bootstrap's. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Everything inside <body> is what visitors actually see. -->
+
+<!-- "articlebox" is defined in style.css. It sets the page's maximum width and centers it. -->
+<div class="articlebox">
+
+    <!-- ===================================================================
+         BOOTSTRAP LAYOUT GRID
+         The page is built from ROWS, and each row is split into COLUMNS.
+         Bootstrap divides every row into 12 equal parts:
+           col-12 = full width (all 12 parts)
+           col-sm-5 + col-sm-7 = two columns, 5/12 and 7/12 wide (5 + 7 = 12)
+           col-sm-8 + col-sm-4 = a wide column and a narrow one
+         The "sm" means the columns sit side by side on screens wider than a
+         phone (576px and up). On phones they stack on top of each other.
+         "lg" (as in col-lg-10) waits until large screens (992px and up).
+         To change a layout, change the numbers, but keep each row adding up to 12.
+
+         Container docs: https://getbootstrap.com/docs/5.3/layout/containers/
+         Grid docs:      https://getbootstrap.com/docs/5.3/layout/grid/
+         Screen sizes:   https://getbootstrap.com/docs/5.3/layout/breakpoints/
+         =================================================================== -->
+    <div class="container">
+
+        <!-- ROW 1: MASTHEAD AND NAV BAR (styled in style.css under "MASTHEAD AND NAVIGATION") -->
+        <div class="row">
+            <div class="col-12">
+                <header>
+                    <div class="masthead">
+                        <!-- CHANGE THIS: your site's name and tagline -->
+                        <a class="site-name" href="index.html">Site Name</a>
+                        <p class="tagline">A short tagline about your site goes here</p>
+                    </div>
+                    <!-- NAVIGATION LINKS
+                         "href" is where the link goes; the text between the tags is what people see.
+                         class="active" underlines the page you're on. On each page, put it on that page's link.
+                         To add a page, copy a whole <a ...>...</a> line and change the href and text. -->
+                    <nav>
+                        <a class="active" aria-current="page" href="index.html">Home</a>
+                        <a href="about/index.html">About</a>
+                        <a href="work/index.html">Work</a>
+                    </nav>
+                </header>
+            </div>
+        </div>
+
+        <!-- ROW 2: TOP OF THE STORY
+             kicker   = small red label above the headline (a topic or section name)
+             headline = the main headline (h1). Use only one h1 per page.
+             dek      = the one- or two-sentence summary under the headline
+             byline   = your name and the date
+             CHANGE ALL OF THESE. Their looks are set in style.css under "HEADLINES AND ARTICLE TEXT".
+             col-lg-10 keeps the headline from stretching all the way across on big screens. -->
+        <div class="row">
+            <div class="col-lg-10">
+                <p class="kicker">Kicker Text Here</p>
+                <h1 class="headline">Headline Here That Tells Readers What the Story Is About</h1>
+                <p class="dek">A one- or two-sentence summary, called a dek, that adds detail the headline couldn&rsquo;t fit.</p>
+                <p class="byline">By <strong>YOUR NAME</strong> &nbsp;&middot;&nbsp; Month Day, Year</p>
+            </div>
+        </div>
+
+        <!-- ROW 3: PHOTO LEFT (5 of 12 parts), TEXT RIGHT (7 of 12 parts) -->
+        <div class="row">
+            <div class="col-sm-5">
+                <!-- A <figure> groups a photo with its caption (<figcaption>).
+                     CHANGE THESE:
+                       src = the photo file. "images/" means it's in the images folder.
+                       alt = a plain description of the photo for people using screen readers.
+                             Describe what's IN the photo; don't start with "photo of".
+                       figcaption = the caption and photo credit shown under the photo.
+                     class="img-fluid" is BOOTSTRAP. It shrinks the photo to fit its column so it never overflows.
+                     Docs: https://getbootstrap.com/docs/5.3/content/images/ -->
+                <figure>
+                    <img src="images/wombat.jpg" alt="A young common wombat standing in grass on Maria Island, Tasmania" class="img-fluid">
+                    <figcaption>A juvenile common wombat on Maria Island, Tasmania, Australia. Photo: <a href="https://commons.wikimedia.org/wiki/File:Common_wombat_(Vombatus_ursinus_tasmaniensis)_juvenile_Maria_Island.jpg">Charles J. Sharp</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-7">
+                <!-- CHANGE THIS: your story text. Each <p>...</p> is one paragraph. -->
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+            </div>
+        </div>
+
+        <!-- ROW 4: FULL-WIDTH TEXT (col-12 = all 12 parts). Add more <p> paragraphs as needed. -->
+        <div class="row">
+            <div class="col-12">
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            </div>
+        </div>
+
+        <!-- ROW 5: PULL QUOTE LEFT (8 parts), TEXT RIGHT (4 parts)
+             <blockquote> shows a quote in large italics with a red bar (styled in style.css under "Pull quote").
+             &ldquo; and &rdquo; are codes for curly opening and closing quotation marks. Keep them around your quote. -->
+        <div class="row">
+            <div class="col-sm-8">
+                <blockquote>
+                    &ldquo;This is a placeholder for a quote from someone interviewed in the story.&rdquo;
+                </blockquote>
+            </div>
+            <div class="col-sm-4">
+                <p>Another column here. Another column here. Another column here. Another column here.</p>
+            </div>
+        </div>
+
+        <!-- ROW 6: PHOTO SLIDESHOW (a BOOTSTRAP "carousel")
+             Bootstrap's JavaScript (linked at the bottom of this page) makes the slides change on their own
+             and makes the arrows and dots work. You don't need to write any code for it.
+             Docs: https://getbootstrap.com/docs/5.3/components/carousel/
+
+             TO ADD A SLIDE: copy one whole <div class="carousel-item">...</div> block, paste it after
+             the last one and change the photo, alt text and caption. Then add another dot button under
+             "carousel-indicators" with the next number (data-bs-slide-to="3", aria-label="Slide 4").
+             The numbers start at 0, so the 4th slide is 3.
+
+             Keep id="photoCarousel" and every data-bs-target="#photoCarousel" matching. That's how
+             the arrows and dots know which slideshow they control. -->
+        <div class="row">
+            <div class="col-12">
+                <!-- "section-label" is the small all-caps heading with a line above it. CHANGE the words if you like. -->
+                <h2 class="section-label">In Pictures</h2>
+                <figure>
+                    <!-- data-bs-ride="carousel" makes it play automatically. Delete that part to make it advance only when clicked. -->
+                    <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                        <!-- The little dots at the bottom: one button per slide. The first one is "active". -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+
+                        <!-- THE SLIDES. Only the first one gets class="active" (it's shown first).
+                             "d-block w-100" are BOOTSTRAP shortcuts that make each photo fill the full width.
+                             Docs: https://getbootstrap.com/docs/5.3/utilities/display/ and https://getbootstrap.com/docs/5.3/utilities/sizing/
+                             "carousel-caption" is BOOTSTRAP's caption that sits on top of the photo.
+                             Docs: https://getbootstrap.com/docs/5.3/components/carousel/#captions
+                             CHANGE the src, alt and caption text in each slide. -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/tatra-mountains.jpg" class="d-block w-100" alt="Rocky mountain peaks and a green valley seen from Kościelec in Poland's Tatra Mountains">
+                                <div class="carousel-caption">
+                                    <p>The view toward Świnica from Kościelec, Tatra National Park, Poland. Photo: <a href="https://commons.wikimedia.org/wiki/File:Ko%C5%9Bcielec_view_2.jpg">kallerna</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/norderney-dunes.jpg" class="d-block w-100" alt="A wooden signpost in grassy sand dunes on the island of Norderney, Germany">
+                                <div class="carousel-caption">
+                                    <p>Dunes and a signpost in the Lower Saxon Wadden Sea National Park, Norderney, Germany. Photo: <a href="https://commons.wikimedia.org/wiki/File:Norderney,_D%C3%BCnenlandschaft,_Wegweiser_--_2025_--_9437.jpg">Dietmar Rabich</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/verdun-crypt.jpg" class="d-block w-100" alt="Stone columns and arches in the crypt of Verdun Cathedral, looking toward the altar">
+                                <div class="carousel-caption">
+                                    <p>The 12th-century Romanesque crypt of Verdun Cathedral, France. Photo: <a href="https://commons.wikimedia.org/wiki/File:Verdun_%E2%80%93_Cath%C3%A9drale_Notre-Dame_%E2%80%93_Crypte_2025_08_16.jpg">Andreas F. Borchert</a> / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The left and right arrows. Leave these as they are.
+                             "visually-hidden" is BOOTSTRAP. It hides the words "Previous" and "Next" from sight
+                             but still lets screen readers announce them.
+                             Docs: https://getbootstrap.com/docs/5.3/helpers/visually-hidden/ -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div><!-- end carousel -->
+                </figure>
+            </div>
+        </div>
+
+        <!-- ROW 7: TEXT LEFT, PHOTO GALLERY RIGHT
+             The heading uses col-12 to span the full width, then the text and gallery share the row below it
+             (5 + 7 = 12). This gallery is NOT Bootstrap. It's a small piece of JavaScript written for this
+             page (see the <script> at the bottom), styled in style.css under "PHOTO GALLERY". -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-label">Photo Gallery</h2>
+            </div>
+            <div class="col-sm-5">
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+            </div>
+            <div class="col-sm-7">
+
+                <!-- =============================================
+                     PHOTO GALLERY
+                     DON'T put photos here. The empty img and caption below get filled in
+                     by the script at the bottom of this page. To add, remove or change
+                     photos, edit the "photos" list in that script.
+                ============================================== -->
+                <div class="gallery">
+                    <div class="gallery-frame">
+                        <img id="gallery-img" src="" alt="">
+                        <p id="gallery-caption"></p>
+                    </div>
+
+                    <!-- The buttons. onclick="changePhoto(-1)" goes back one photo and changePhoto(1) goes forward.
+                         You can change the button words. &#8592; and &#8594; are codes for the left and right arrows. -->
+                    <div class="gallery-controls">
+                        <button onclick="changePhoto(-1)">&#8592; Previous</button>
+                        <span id="gallery-counter"></span>
+                        <button onclick="changePhoto(1)">Next &#8594;</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ROW 8: FAQ (a BOOTSTRAP "accordion")
+             Clicking a question opens its answer and closes the others. Bootstrap's JavaScript does this for you.
+             Its colors and fonts are adjusted in style.css under "FAQ ACCORDION".
+             Docs: https://getbootstrap.com/docs/5.3/components/accordion/
+
+             CHANGE the question text (inside the <button>) and the answer text (inside "accordion-body").
+
+             TO ADD A QUESTION: copy one whole <div class="accordion-item">...</div> block and change every
+             "faq3" in it to "faq4" (there are 5 of them: id, data-bs-target, aria-controls, aria-labelledby
+             and faq3-heading). Each question needs its own number or the wrong answer will open.
+
+             The first question starts open: its button has no "collapsed" class and its answer has "show".
+             The others start closed: their buttons have "collapsed" and their answers don't have "show". -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-label">Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+
+                    <!-- QUESTION 1 (starts open) -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faq1-heading">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                First question goes here?
+                            </button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Placeholder answer. Replace this with your real answer.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QUESTION 2 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faq2-heading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                Second question goes here?
+                            </button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Placeholder answer. Replace this with your real answer.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QUESTION 3 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faq3-heading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                Third question goes here?
+                            </button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Placeholder answer. Replace this with your real answer.
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end accordion -->
+            </div>
+        </div>
+
+        <!-- ROW 9: FOOTER. CHANGE the year and your name. &copy; is the code for the © symbol. -->
+        <div class="row">
+            <div class="col-12">
+                <footer>&copy; Year YOUR NAME. All rights reserved.</footer>
+            </div>
+        </div>
+
+    </div><!-- end container -->
+
+</div><!-- end articlebox -->
+
+
+<!-- BOOTSTRAP JAVASCRIPT: makes the carousel and the FAQ accordion work. Don't edit it, and keep it
+     near the bottom of the page so the page content loads first.
+     Docs: https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- PHOTO GALLERY JAVASCRIPT (not Bootstrap). Inside script tags, a note starts with two slashes (//) instead of this kind of comment. -->
+<script>
+    // -----------------------------------------------
+    // ADD YOUR PHOTOS HERE
+    // Each photo is one { ... } block, and the blocks are separated by commas.
+    // To add a photo, copy a whole block (from { to }), paste it after the last
+    // one, put a comma between them, and change these four parts:
+    //   src     = the photo file ("images/" means it's in the images folder)
+    //   alt     = a plain description of the photo for screen readers
+    //   caption = the text shown below the photo
+    //   credit  = the photographer credit (it can include links)
+    // Keep the quotation marks around each value.
+    // -----------------------------------------------
+
+    // The Creative Commons license link, saved once here so every credit can reuse it
+    const license = '<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>';
+
+    const photos = [
+        {
+            src: "images/bee-eaters.jpg",
+            alt: "Three small green birds with long tails perched together on a thin branch",
+            caption: "Asian green bee-eaters in Keoladeo National Park, India.",
+            credit: 'Photo: <a href="https://commons.wikimedia.org/wiki/File:002_Asian_green_bee-eaters_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg">Giles Laurent</a> / Wikimedia Commons, ' + license
+        },
+        {
+            src: "images/tatra-mountains.jpg",
+            alt: "Rocky mountain peaks and a green valley seen from Kościelec in Poland's Tatra Mountains",
+            caption: "The view toward Świnica from Kościelec, Tatra National Park, Poland.",
+            credit: 'Photo: <a href="https://commons.wikimedia.org/wiki/File:Ko%C5%9Bcielec_view_2.jpg">kallerna</a> / Wikimedia Commons, ' + license
+        },
+        {
+            src: "images/wombat.jpg",
+            alt: "A young common wombat standing in grass on Maria Island, Tasmania",
+            caption: "A juvenile common wombat on Maria Island, Tasmania, Australia.",
+            credit: 'Photo: <a href="https://commons.wikimedia.org/wiki/File:Common_wombat_(Vombatus_ursinus_tasmaniensis)_juvenile_Maria_Island.jpg">Charles J. Sharp</a> / Wikimedia Commons, ' + license
+        }
+    ];
+    // -----------------------------------------------
+    // You don't need to change anything below this line.
+    // -----------------------------------------------
+
+    // Keeps track of which photo is showing (0 = the first one)
+    let current = 0;
+
+    // Puts photo number "index" into the gallery: its file, alt text, caption and the "1 of 3" counter
+    function showPhoto(index) {
+        document.getElementById("gallery-img").src = photos[index].src;
+        document.getElementById("gallery-img").alt = photos[index].alt;
+        document.getElementById("gallery-caption").innerHTML = photos[index].caption + " " + photos[index].credit;
+        document.getElementById("gallery-counter").textContent = (index + 1) + " of " + photos.length;
+    }
+
+    // Runs when a button is clicked: moves forward (1) or back (-1),
+    // and wraps around from the last photo to the first
+    function changePhoto(direction) {
+        current = (current + direction + photos.length) % photos.length;
+        showPhoto(current);
+    }
+
+    // Show the first photo when the page loads
+    showPhoto(current);
+</script>
+
+</body>
+
+</html>
